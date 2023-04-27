@@ -1,8 +1,6 @@
 package org.example;
-
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.lang.reflect.Method;
 
 //Створити клас Calculation
@@ -34,60 +32,32 @@ public class Calculation {
     //для перевірки додавання;
     @Test(dataProvider = "additionDataProvider")
     public void testAddition(int a, int b, int expected) {
-        Calculation calculation = new Calculation();
-        int actual = calculation.add(a, b);
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(a + b, expected);
     }
-
-    private int add(int a, int b) {
-        return 0;
-    }
-
 
     //для перевірки віднімання;
     @Test(dataProvider = "subtractionDataProvider")
     public void testSubtraction(int a, int b, int expected) {
-        Calculation calculation = new Calculation();
-        int actual = calculation.subtract(a, b);
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(a - b, expected);
     }
-
-    private int subtract(int a, int b) {
-        return 0;
-    }
-
 
     //для перевірки множення;
     @Test(dataProvider = "multiplicationDataProvider")
     public void testMultiplication(int a, int b, int expected) {
-        Calculation calculation = new Calculation();
-        int actual = calculation.multiply(a, b);
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(a * b, expected);
     }
-
-    private int multiply(int a, int b) {
-        return 0;
-    }
-
 
     //для перевірки ділення.
     @Test(dataProvider = "divisionDataProvider")
     public void testDivision(int a, int b, int expected) {
-        Calculation calculation = new Calculation();
-        int actual = calculation.divide(a, b);
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(a / b, expected);
     }
-
-    private int divide(int a, int b) {
-        return 0;
-    }
-
 
     //Для кожного з цих тестових методів створити dataProvider, наповнити його даними та прилінкувати до відповідного тестового методу.
     @DataProvider(name = "additionDataProvider")
     public Object[][] additionDataProvider() {
         return new Object[][] {
-                {1, 2, 0},
+                {1, 2, 3},
                 {-1, 1, 0},
                 {0, 0, 0}
         };
@@ -96,8 +66,8 @@ public class Calculation {
     @DataProvider(name = "subtractionDataProvider")
     public Object[][] subtractionDataProvider() {
         return new Object[][] {
-                {1, 2, 0},
-                {5, 3, 0},
+                {1, 2, -1},
+                {5, 3, 2},
                 {0, 0, 0}
         };
     }
@@ -105,8 +75,8 @@ public class Calculation {
     @DataProvider(name = "multiplicationDataProvider")
     public Object[][] multiplicationDataProvider() {
         return new Object[][] {
-                {2, 3, 0},
-                {4, -5, 0},
+                {2, 3, 6},
+                {4, -5, -20},
                 {0, 1, 0}
         };
     }
@@ -114,8 +84,8 @@ public class Calculation {
     @DataProvider(name = "divisionDataProvider")
     public Object[][] divisionDataProvider() {
         return new Object[][] {
-                {6, 3, 0},
-                {10, 5, 0},
+                {6, 3, 2},
+                {10, 5, 2},
                 {0, 1, 0}
         };
     }

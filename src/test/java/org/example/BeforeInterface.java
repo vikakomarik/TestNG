@@ -5,10 +5,14 @@ import java.lang.reflect.Method;
 
 public interface BeforeInterface {
     @BeforeClass
-    void beforeClass();
+    default void beforeClass() {
+        System.out.println("Починається загальне тестування");
+    }
 
     @BeforeMethod
-    void beforeMethod(Method method);
+    default void beforeMethod(Method method) {
+        System.out.println("Починається тестування " + method.getName());
+    }
 }
 
 

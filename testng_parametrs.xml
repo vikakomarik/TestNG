@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <parameter name="login" value="admin1945"></parameter>
     <test verbose="2" preserve-order="true" name="/Users/viktoriakomarova/IdeaProjects/TestNG/src/test/java/org/example">
-        <classes><class name="org.example.Calculation">
+        <classes><class name="org.example.CalculationTest">
             <methods><include name="p_test"/>
             </methods>
         </class>

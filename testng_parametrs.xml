@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="login" value="admin1945"></parameter>
+    <test verbose="2" preserve-order="true" name="/Users/viktoriakomarova/IdeaProjects/TestNG/src/test/java/org/example">
+        <classes><class name="org.example.Calculation">
+            <methods><include name="p_test"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>

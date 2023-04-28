@@ -1,10 +1,19 @@
 package org.example;
+import com.beust.jcommander.Parameter;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import java.lang.reflect.Method;
 
 //Створити клас Calculation
 public class Calculation implements BeforeInterface, AfterInterface {
+
+    @Parameters (value="login")
+    @Test
+    public void p_test(String param) {
+        System.out.println("login is ");
+        System.out.println(param);
+        Assert.fail();
+    }
 
     @Override
     public void beforeClass() {

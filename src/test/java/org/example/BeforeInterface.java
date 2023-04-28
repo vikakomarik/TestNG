@@ -1,13 +1,16 @@
 package org.example;
 
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
 import java.lang.reflect.Method;
 
 public interface BeforeInterface {
-    public default void beforeClass() {
-    }
+    @BeforeClass
+    void beforeClass();
 
-    public default void beforeMethod(Method method) {
-    }
+    @BeforeMethod
+    void beforeMethod(Method method);
 }
 
 

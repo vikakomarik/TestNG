@@ -1,12 +1,15 @@
 package org.example;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+
 import java.lang.reflect.Method;
 
 public interface AfterInterface {
-    public default void afterClass() {
-    }
+    @AfterClass
+    void afterClass();
 
-    public default void afterMethod(Method method) {
-    }
+    @AfterMethod
+    void afterMethod(Method method);
 }
 

@@ -6,22 +6,22 @@ import java.lang.reflect.Method;
 //Створити клас Calculation
 public class Calculation implements BeforeInterface, AfterInterface {
 
-    @BeforeClass
+    @Override
     public void beforeClass() {
         System.out.println("Починається загальне тестування");
     }
 
-    @AfterClass
+    @Override
     public void afterClass() {
         System.out.println("Загальне тестування завершено");
     }
 
-    @BeforeMethod
+    @Override
     public void beforeMethod(Method method) {
         System.out.println("Починається тестування " + method.getName());
     }
 
-    @AfterMethod
+    @Override
     public void afterMethod(Method method) {
         System.out.println("Тестування " + method.getName() + " завершено");
     }

@@ -4,7 +4,7 @@ import org.testng.annotations.*;
 import java.lang.reflect.Method;
 
 //Створити клас Calculation
-public class Calculation {
+public class Calculation implements BeforeInterface, AfterInterface {
 
     @BeforeClass
     public void beforeClass() {
@@ -22,7 +22,6 @@ public class Calculation {
     }
 
     @AfterMethod
-
     public void afterMethod(Method method) {
         System.out.println("Тестування " + method.getName() + " завершено");
     }
@@ -90,3 +89,4 @@ public class Calculation {
         };
     }
 }
+

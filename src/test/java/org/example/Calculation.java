@@ -5,35 +5,27 @@ import org.testng.annotations.*;
 import java.lang.reflect.Method;
 
 //Створити клас Calculation
-public class Calculation implements BeforeInterface, AfterInterface {
+public abstract class Calculation implements BeforeInterface, AfterInterface {
 
-    @Parameters (value="login")
+ /*   @Parameters (value="login")
     @Test
     public void p_test(String param) {
         System.out.println("login is ");
         System.out.println(param);
         Assert.fail();
-    }
+    }*/
 
-    @Override
-    public void beforeClass() {
-        System.out.println("Починається загальне тестування");
-    }
+    @BeforeClass
+    public abstract void beforeClass();
 
-    @Override
-    public void afterClass() {
-        System.out.println("Загальне тестування завершено");
-    }
+    @AfterClass
+    public abstract void afterClass();
 
-    @Override
-    public void beforeMethod(Method method) {
-        System.out.println("Починається тестування " + method.getName());
-    }
+    @BeforeMethod
+    public abstract void beforeMethod(Method method);
 
-    @Override
-    public void afterMethod(Method method) {
-        System.out.println("Тестування " + method.getName() + " завершено");
-    }
+    @AfterMethod
+    public abstract void afterMethod(Method method);
 
 //В ньому створити 4 тестові методи
 

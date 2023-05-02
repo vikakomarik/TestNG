@@ -7,7 +7,7 @@
     <test verbose="2" preserve-order="true" name="Listener">
         <classes>
             <class name="org.example.Listener"/>
-            <class name="org.example.Calculation"/>
+            <class name="org.example.CalculationTest"/>
             </classes>
    </test>
 </suite>
